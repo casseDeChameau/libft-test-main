@@ -52,49 +52,49 @@ gcc main.c -L. -lft -o test.out
 
 | Function | Toggle | Entry format | Expected output |
 |---|---|---|---|
-| `ft_atoi` | ✓ | `ft_atoi 1 "42"` | `ft_atoi: 42` |
-| `ft_bzero` | ✓ | `ft_bzero 1 "hello" 3` | `[0]: 0` `[1]: 0` `[2]: 0` |
-| `ft_calloc` | ✓ | `ft_calloc 1 3 4` | `[0]: 0` ... `[11]: 0` |
-| `ft_isalnum` | ✓ | `ft_isalnum 1 65` | `ft_isalnum: 1` |
-| `ft_isalpha` | ✓ | `ft_isalpha 1 65` | `ft_isalpha: 1` |
-| `ft_isascii` | ✓ | `ft_isascii 1 65` | `ft_isascii: 1` |
-| `ft_isdigit` | ✓ | `ft_isdigit 1 48` | `ft_isdigit: 1` |
-| `ft_isprint` | ✓ | `ft_isprint 1 32` | `ft_isprint: 1` |
-| `ft_itoa` | ✗ | `ft_itoa "-42"` | `res: -42` |
-| `ft_memchr` | ✓ | `ft_memchr 1 "hello" 108 5` | `ft_memchr: llo` |
-| `ft_memcmp` | ✓ | `ft_memcmp 1 "abc" "abc" 3` | `ft_memcmp: 0` |
-| `ft_memcpy` | ✓ | `ft_memcpy 1 "dst" "src" 3` | `ft_memcpy: src` |
-| `ft_memmove` | ✓ | `ft_memmove 1 "dst" "src" 3` | `ft_memmove: src` |
-| `ft_memset` | ✓ | `ft_memset 1 "hello" 42 3` | `ft_memset: ***lo` |
-| `ft_putchar_fd` | ✗ | `ft_putchar_fd outfile.txt "A"` | `cat outfile.txt` → `A` |
-| `ft_putstr_fd` | ✗ | `ft_putstr_fd outfile.txt "hello"` | `cat outfile.txt` → `hello` |
-| `ft_putendl_fd` | ✗ | `ft_putendl_fd outfile.txt "hello"` | `cat -e outfile.txt` → `hello$` |
-| `ft_putnbr_fd` | ✗ | `ft_putnbr_fd outfile.txt 42` | `cat outfile.txt` → `42` |
-| `ft_split` | ✗ | `ft_split "hello world" " " 2` | `hello` `world` |
-| `ft_strchr` | ✓ | `ft_strchr 1 "hello" 108` | `ft_strchr: llo` |
-| `ft_strdup` | ✓ | `ft_strdup 1 "hello"` | `orig value: hello` `dup value: hello` `different addresses` |
-| `ft_striteri` | ✗ | `ft_striteri "hello"` | `HELLO` |
-| `ft_strjoin` | ✗ | `ft_strjoin "hello" " world"` | `ft_strjoin: hello world` |
-| `ft_strlcat` | ✓ | `ft_strlcat 1 "hello" " world" 10` | `ft_strlcat: 11` |
-| `ft_strlcpy` | ✓ | `ft_strlcpy 1 "dst" "src" 4` | `ft_strlcpy: src` |
-| `ft_strlen` | ✓ | `ft_strlen 1 "hello"` | `ft: 5` `lib: 5` |
-| `ft_strmapi` | ✗ | `ft_strmapi "hello"` | `HELLO` |
-| `ft_strncmp` | ✓ | `ft_strncmp 1 "abc" "abd" 3` | `ft: -1` `lib: -1` |
-| `ft_strnstr` | ✓ | `ft_strnstr 1 "hello world" "world" 11` | `strnstr: world` |
-| `ft_strrchr` | ✓ | `ft_strrchr 1 "hello" 108` | `ft: llo` |
-| `ft_strtrim` | ✗ | `ft_strtrim "  hello  " " "` | `result: hello` |
-| `ft_substr` | ✗ | `ft_substr "hello world" 6 5` | `world` |
+| `ft_atoi` | ✓ | `ft_atoi 1 "  -2147483648"` | `ft_atoi: -2147483648` |
+| `ft_bzero` | ✓ | `ft_bzero 1 "hello" 0` | *(no output — n=0)* |
+| `ft_calloc` | ✓ | `ft_calloc 1 0 4` | *(no output — nmemb=0)* |
+| `ft_isalnum` | ✓ | `ft_isalnum 1 32` | `ft_isalnum: 0` |
+| `ft_isalpha` | ✓ | `ft_isalpha 1 48` | `ft_isalpha: 0` |
+| `ft_isascii` | ✓ | `ft_isascii 1 128` | `ft_isascii: 0` |
+| `ft_isdigit` | ✓ | `ft_isdigit 1 47` | `ft_isdigit: 0` |
+| `ft_isprint` | ✓ | `ft_isprint 1 31` | `ft_isprint: 0` |
+| `ft_itoa` | ✗ | `ft_itoa "-2147483648"` | `res: -2147483648` |
+| `ft_memchr` | ✓ | `ft_memchr 1 "hello" 122 5` | `ft_memchr: (null)` |
+| `ft_memcmp` | ✓ | `ft_memcmp 1 "abc" "abd" 3` | `ft_memcmp: -1` |
+| `ft_memcpy` | ✓ | `ft_memcpy 1 "aaaaa" "src" 0` | `ft_memcpy: aaaaa` |
+| `ft_memmove` | ✓ | `ft_memmove 1 "hello" "hello" 5` | `ft_memmove: hello` |
+| `ft_memset` | ✓ | `ft_memset 1 "hello" 0 3` | `ft_memset: \0\0\0lo` |
+| `ft_putchar_fd` | ✗ | `ft_putchar_fd outfile.txt "\0"` | `cat outfile.txt` → *(empty)* |
+| `ft_putstr_fd` | ✗ | `ft_putstr_fd outfile.txt ""` | `cat outfile.txt` → *(empty)* |
+| `ft_putendl_fd` | ✗ | `ft_putendl_fd outfile.txt ""` | `cat -e outfile.txt` → `$` |
+| `ft_putnbr_fd` | ✗ | `ft_putnbr_fd outfile.txt -2147483648` | `cat outfile.txt` → `-2147483648` |
+| `ft_split` | ✗ | `ft_split "" "z" 0` | `ft_split:` *(empty)* |
+| `ft_strchr` | ✓ | `ft_strchr 1 "hello" 0` | `ft_strchr: ` *(points to \0)* |
+| `ft_strdup` | ✓ | `ft_strdup 1 ""` | `orig value: ` `dup value: ` `different addresses` |
+| `ft_striteri` | ✗ | `ft_striteri ""` | *(empty)* |
+| `ft_strjoin` | ✗ | `ft_strjoin "" ""` | `ft_strjoin: ` |
+| `ft_strlcat` | ✓ | `ft_strlcat 1 "hello" " world" 3` | `ft_strlcat: 9` |
+| `ft_strlcpy` | ✓ | `ft_strlcpy 1 "dst" "hello" 0` | `ft_strlcpy: dst` |
+| `ft_strlen` | ✓ | `ft_strlen 1 ""` | `ft: 0` `lib: 0` |
+| `ft_strmapi` | ✗ | `ft_strmapi ""` | *(empty)* |
+| `ft_strncmp` | ✓ | `ft_strncmp 1 "abc" "abc" 0` | `ft: 0` `lib: 0` |
+| `ft_strnstr` | ✓ | `ft_strnstr 1 "hello" "" 5` | `strnstr: hello` |
+| `ft_strrchr` | ✓ | `ft_strrchr 1 "hello" 108` | `ft: lo` *(last l)* |
+| `ft_strtrim` | ✗ | `ft_strtrim "aahelloaa" "a"` | `result: hello` |
+| `ft_substr` | ✗ | `ft_substr "hello" 10 5` | *(empty — start > len)* |
 | `ft_tolower` | ✓ | `ft_tolower 1 65` | `ft_tolower: a` |
-| `ft_toupper` | ✓ | `ft_toupper 1 97` | `ft_toupper: A` |
-| `ft_lstnew` | ✗ | `ft_lstnew "hello"` | `content: hello` `next: 0x0` |
-| `ft_lstadd_front` | ✗ | `ft_lstadd_front "head" "new"` | `head: new` |
-| `ft_lstadd_back` | ✗ | `ft_lstadd_back "head" "new"` | `last: new` |
-| `ft_lstsize` | ✗ | `ft_lstsize 5` | `size: 5` |
-| `ft_lstlast` | ✗ | `ft_lstlast 5` | `last: a` |
-| `ft_lstdelone` | ✗ | `ft_lstdelone "hello"` | `lstdelone: ok` |
-| `ft_lstclear` | ✗ | `ft_lstclear 5` | `lstclear: ok` |
-| `ft_lstiter` | ✗ | `ft_lstiter 5` | `from *f> e` ... `from *f> a` |
-| `ft_lstmap` | ✗ | `ft_lstmap 5` | `from *f> E` ... `from *f> A` |
+| `ft_toupper` | ✓ | `ft_toupper 1 122` | `ft_toupper: Z` |
+| `ft_lstnew` | ✗ | `ft_lstnew ""` | `content: ` `next: 0x0` |
+| `ft_lstadd_front` | ✗ | `ft_lstadd_front "" "new"` | `head: new` |
+| `ft_lstadd_back` | ✗ | `ft_lstadd_back "head" ""` | `last: ` |
+| `ft_lstsize` | ✗ | `ft_lstsize 0` | `size: 0` |
+| `ft_lstlast` | ✗ | `ft_lstlast 1` | `last: a` |
+| `ft_lstdelone` | ✗ | `ft_lstdelone ""` | `lstdelone: ok` |
+| `ft_lstclear` | ✗ | `ft_lstclear 0` | `lstclear: ok` |
+| `ft_lstiter` | ✗ | `ft_lstiter 1` | `from *f> a` |
+| `ft_lstmap` | ✗ | `ft_lstmap 1` | `from *f> A` |
 
 ---
 
