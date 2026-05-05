@@ -66,7 +66,7 @@ gcc main.c -L. -lft -o test.out
 | `ft_memcpy` | ✓ | `ft_memcpy 1 "aaaaa" "src" 0` | `ft_memcpy: aaaaa` |
 | `ft_memmove` | ✓ | `ft_memmove 1 "hello" "hello" 5` | `ft_memmove: hello` |
 | `ft_memset` | ✓ | `ft_memset 1 "hello" 0 3` | `ft_memset: \0\0\0lo` |
-| `ft_putchar_fd` | ✗ | `ft_putchar_fd outfile.txt " "` | `cat outfile.txt` → *(empty)* |
+| `ft_putchar_fd` | ✗ | `ft_putchar_fd outfile.txt " "` | `cat outfile.txt` → space |
 | `ft_putstr_fd` | ✗ | `ft_putstr_fd outfile.txt ""` | `cat outfile.txt` → *(empty)* |
 | `ft_putendl_fd` | ✗ | `ft_putendl_fd outfile.txt ""` | `cat -e outfile.txt` → `$` |
 | `ft_putnbr_fd` | ✗ | `ft_putnbr_fd outfile.txt -2147483648` | `cat outfile.txt` → `-2147483648` |
