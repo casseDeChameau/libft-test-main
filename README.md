@@ -50,51 +50,51 @@ gcc main.c -L. -lft -o test.out
 
 ## Function reference
 
-| Function | Toggle | Entry format |
-|---|---|---|
-| `ft_atoi` | ✓ | `./test.out ft_atoi 1 "42"` |
-| `ft_bzero` | ✓ | `./test.out ft_bzero 1 "hello" 3` |
-| `ft_calloc` | ✓ | `./test.out ft_calloc 1 5 4` |
-| `ft_isalnum` | ✓ | `./test.out ft_isalnum 1 65` |
-| `ft_isalpha` | ✓ | `./test.out ft_isalpha 1 65` |
-| `ft_isascii` | ✓ | `./test.out ft_isascii 1 65` |
-| `ft_isdigit` | ✓ | `./test.out ft_isdigit 1 48` |
-| `ft_isprint` | ✓ | `./test.out ft_isprint 1 32` |
-| `ft_itoa` | ✗ | `./test.out ft_itoa "-42"` |
-| `ft_memchr` | ✓ | `./test.out ft_memchr 1 "hello" 108 5` |
-| `ft_memcmp` | ✓ | `./test.out ft_memcmp 1 "abc" "abc" 3` |
-| `ft_memcpy` | ✓ | `./test.out ft_memcpy 1 "dst" "src" 3` |
-| `ft_memmove` | ✓ | `./test.out ft_memmove 1 "dst" "src" 3` |
-| `ft_memset` | ✓ | `./test.out ft_memset 1 "hello" 42 3` |
-| `ft_putchar_fd` | ✗ | `./test.out ft_putchar_fd outfile.txt "A"` |
-| `ft_putstr_fd` | ✗ | `./test.out ft_putstr_fd outfile.txt "hello"` |
-| `ft_putendl_fd` | ✗ | `./test.out ft_putendl_fd outfile.txt "hello"` |
-| `ft_putnbr_fd` | ✗ | `./test.out ft_putnbr_fd outfile.txt 42` |
-| `ft_split` | ✗ | `./test.out ft_split "hello world" " " 2` |
-| `ft_strchr` | ✓ | `./test.out ft_strchr 1 "hello" 108` |
-| `ft_strdup` | ✓ | `./test.out ft_strdup 1 "hello"` |
-| `ft_striteri` | ✗ | `./test.out ft_striteri "hello"` |
-| `ft_strjoin` | ✗ | `./test.out ft_strjoin "hello" " world"` |
-| `ft_strlcat` | ✓ | `./test.out ft_strlcat 1 "hello" " world" 10` |
-| `ft_strlcpy` | ✓ | `./test.out ft_strlcpy 1 "dst" "src" 4` |
-| `ft_strlen` | ✓ | `./test.out ft_strlen 1 "hello"` |
-| `ft_strmapi` | ✗ | `./test.out ft_strmapi "hello"` |
-| `ft_strncmp` | ✓ | `./test.out ft_strncmp 1 "abc" "abd" 3` |
-| `ft_strnstr` | ✓ | `./test.out ft_strnstr 1 "hello world" "world" 11` |
-| `ft_strrchr` | ✓ | `./test.out ft_strrchr 1 "hello" 108` |
-| `ft_strtrim` | ✗ | `./test.out ft_strtrim "  hello  " " "` |
-| `ft_substr` | ✗ | `./test.out ft_substr "hello world" 6 5` |
-| `ft_tolower` | ✓ | `./test.out ft_tolower 1 65` |
-| `ft_toupper` | ✓ | `./test.out ft_toupper 1 97` |
-| `ft_lstnew` | ✗ | `./test.out ft_lstnew "hello"` |
-| `ft_lstadd_front` | ✗ | `./test.out ft_lstadd_front "head" "new"` |
-| `ft_lstadd_back` | ✗ | `./test.out ft_lstadd_back "head" "new"` |
-| `ft_lstsize` | ✗ | `./test.out ft_lstsize 5` |
-| `ft_lstlast` | ✗ | `./test.out ft_lstlast 5` |
-| `ft_lstdelone` | ✗ | `./test.out ft_lstdelone "hello"` |
-| `ft_lstclear` | ✗ | `./test.out ft_lstclear 5` |
-| `ft_lstiter` | ✗ | `./test.out ft_lstiter 5` |
-| `ft_lstmap` | ✗ | `./test.out ft_lstmap 5` |
+| Function | Toggle | Entry format | Expected output |
+|---|---|---|---|
+| `ft_atoi` | ✓ | `ft_atoi 1 "42"` | `ft_atoi: 42` |
+| `ft_bzero` | ✓ | `ft_bzero 1 "hello" 3` | `[0]: 0` `[1]: 0` `[2]: 0` |
+| `ft_calloc` | ✓ | `ft_calloc 1 3 4` | `[0]: 0` ... `[11]: 0` |
+| `ft_isalnum` | ✓ | `ft_isalnum 1 65` | `ft_isalnum: 1` |
+| `ft_isalpha` | ✓ | `ft_isalpha 1 65` | `ft_isalpha: 1` |
+| `ft_isascii` | ✓ | `ft_isascii 1 65` | `ft_isascii: 1` |
+| `ft_isdigit` | ✓ | `ft_isdigit 1 48` | `ft_isdigit: 1` |
+| `ft_isprint` | ✓ | `ft_isprint 1 32` | `ft_isprint: 1` |
+| `ft_itoa` | ✗ | `ft_itoa "-42"` | `res: -42` |
+| `ft_memchr` | ✓ | `ft_memchr 1 "hello" 108 5` | `ft_memchr: llo` |
+| `ft_memcmp` | ✓ | `ft_memcmp 1 "abc" "abc" 3` | `ft_memcmp: 0` |
+| `ft_memcpy` | ✓ | `ft_memcpy 1 "dst" "src" 3` | `ft_memcpy: src` |
+| `ft_memmove` | ✓ | `ft_memmove 1 "dst" "src" 3` | `ft_memmove: src` |
+| `ft_memset` | ✓ | `ft_memset 1 "hello" 42 3` | `ft_memset: ***lo` |
+| `ft_putchar_fd` | ✗ | `ft_putchar_fd outfile.txt "A"` | `cat outfile.txt` → `A` |
+| `ft_putstr_fd` | ✗ | `ft_putstr_fd outfile.txt "hello"` | `cat outfile.txt` → `hello` |
+| `ft_putendl_fd` | ✗ | `ft_putendl_fd outfile.txt "hello"` | `cat -e outfile.txt` → `hello$` |
+| `ft_putnbr_fd` | ✗ | `ft_putnbr_fd outfile.txt 42` | `cat outfile.txt` → `42` |
+| `ft_split` | ✗ | `ft_split "hello world" " " 2` | `hello` `world` |
+| `ft_strchr` | ✓ | `ft_strchr 1 "hello" 108` | `ft_strchr: llo` |
+| `ft_strdup` | ✓ | `ft_strdup 1 "hello"` | `orig value: hello` `dup value: hello` `different addresses` |
+| `ft_striteri` | ✗ | `ft_striteri "hello"` | `HELLO` |
+| `ft_strjoin` | ✗ | `ft_strjoin "hello" " world"` | `ft_strjoin: hello world` |
+| `ft_strlcat` | ✓ | `ft_strlcat 1 "hello" " world" 10` | `ft_strlcat: 11` |
+| `ft_strlcpy` | ✓ | `ft_strlcpy 1 "dst" "src" 4` | `ft_strlcpy: src` |
+| `ft_strlen` | ✓ | `ft_strlen 1 "hello"` | `ft: 5` `lib: 5` |
+| `ft_strmapi` | ✗ | `ft_strmapi "hello"` | `HELLO` |
+| `ft_strncmp` | ✓ | `ft_strncmp 1 "abc" "abd" 3` | `ft: -1` `lib: -1` |
+| `ft_strnstr` | ✓ | `ft_strnstr 1 "hello world" "world" 11` | `strnstr: world` |
+| `ft_strrchr` | ✓ | `ft_strrchr 1 "hello" 108` | `ft: llo` |
+| `ft_strtrim` | ✗ | `ft_strtrim "  hello  " " "` | `result: hello` |
+| `ft_substr` | ✗ | `ft_substr "hello world" 6 5` | `world` |
+| `ft_tolower` | ✓ | `ft_tolower 1 65` | `ft_tolower: a` |
+| `ft_toupper` | ✓ | `ft_toupper 1 97` | `ft_toupper: A` |
+| `ft_lstnew` | ✗ | `ft_lstnew "hello"` | `content: hello` `next: 0x0` |
+| `ft_lstadd_front` | ✗ | `ft_lstadd_front "head" "new"` | `head: new` |
+| `ft_lstadd_back` | ✗ | `ft_lstadd_back "head" "new"` | `last: new` |
+| `ft_lstsize` | ✗ | `ft_lstsize 5` | `size: 5` |
+| `ft_lstlast` | ✗ | `ft_lstlast 5` | `last: a` |
+| `ft_lstdelone` | ✗ | `ft_lstdelone "hello"` | `lstdelone: ok` |
+| `ft_lstclear` | ✗ | `ft_lstclear 5` | `lstclear: ok` |
+| `ft_lstiter` | ✗ | `ft_lstiter 5` | `from *f> e` ... `from *f> a` |
+| `ft_lstmap` | ✗ | `ft_lstmap 5` | `from *f> E` ... `from *f> A` |
 
 ---
 
