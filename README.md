@@ -1,5 +1,30 @@
 # libft-test-main
 
+ ___         ___       ___         ___                            ___     
+(   )  .-.  (   )     (   )       (   )                          (   )    
+ | |  ( __)  | |.-.    | |_        | |_       .--.       .--.     | |_    
+ | |  (''")  | /   \  (   __)     (   __)    /    \    /  _  \   (   __)  
+ | |   | |   |  .-. |  | |         | |      |  .-. ;  . .' `. ;   | |     
+ | |   | |   | |  | |  | | ___     | | ___  |  | | |  | '   | |   | | ___ 
+ | |   | |   | |  | |  | |(   )    | |(   ) |  |/  |  _\_`.(___)  | |(   )
+ | |   | |   | |  | |  | | | |     | | | |  |  ' _.' (   ). '.    | | | | 
+ | |   | |   | '  | |  | ' | |     | ' | |  |  .'.-.  | |  `\ |   | ' | | 
+ | |   | |   ' `-' ;   ' `-' ;     ' `-' ;  '  `-' /  ; '._,' '   ' `-' ; 
+(___) (___)   `.__.     `.__.       `.__.    `.__.'    '.___.'     `.__.  
+                                                                          
+                                                                          
+                                                                          
+                         .-.                                              
+ ___ .-. .-.     .---.  ( __)  ___ .-.                                    
+(   )   '   \   / .-, \ (''") (   )   \                                   
+ |  .-.  .-. ; (__) ; |  | |   |  .-. .                                   
+ | |  | |  | |   .'`  |  | |   | |  | |                                   
+ | |  | |  | |  / .'| |  | |   | |  | |                                   
+ | |  | |  | | | /  | |  | |   | |  | |                                   
+ | |  | |  | | ; |  ; |  | |   | |  | |                                   
+ | |  | |  | | ' `-'  |  | |   | |  | |                                   
+(___)(___)(___)`.__.'_. (___) (___)(___)                                  
+
 A personal test harness for the [libft](https://github.com/<your_handle>/libft) project. Not submitted with the library — kept separate as it is not allowed for the 42 moulinette.
 
 Each test compares `ft_` implementations against their libc equivalent where one exists, or runs the function directly otherwise.
